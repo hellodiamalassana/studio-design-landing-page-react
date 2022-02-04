@@ -193,6 +193,59 @@ function App() {
                 </p>
               </div>
             </div>
+            <div className="flex w-full">
+              <div className="w-full">asd</div>
+              <div className="relative  w-[600px] h-[415px] animate-spin-slow">
+                <div className="">
+                  <div className="absolute left-[40%] ">
+                   <div className="animate-neg-spin-slow">
+                      <img src="./src/assets/avatar/1.png" alt="" />
+                   </div>
+                  </div>
+                  <div className="absolute top-[20%]">
+                    <div className="animate-neg-spin-slow">
+                    <img src="./src/assets/avatar/5.png" className="w-[98px] h-[98px]" alt="" />
+                    </div>
+                  </div>
+                  <div className="absolute top-[60%]">
+                    <div className="animate-neg-spin-slow">
+                    <img src="./src/assets/avatar/3.png" className="w-[68px] h-[68px]" alt="" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-0 left-[30%]">
+                    <div className="animate-neg-spin-slow">
+                    <img src="./src/assets/avatar/6.png" className="w-[98px] h-[98px]" alt="" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-[20%] right-[10%]">
+                    <div className="animate-neg-spin-slow">
+                    <img src="./src/assets/avatar/7.png" className="w-[68px] h-[68px]" alt="" />
+                    </div>
+                  </div>
+                  <div className="absolute top-[15%] right-[10%]">
+                    <div className="animate-neg-spin-slow">
+                    <img src="./src/assets/avatar/4.png" className="w-[54px] h-[54px]" alt="" />
+                    </div>
+                  </div>
+                  <div className="absolute top-[40%] right-0">
+                    <div className="animate-neg-spin-slow">
+                    <img src="./src/assets/avatar/2.png" className="w-[54px] h-[54px]" alt="" />
+                    </div>
+                  </div>
+                  <div className="absolute top-[40%] right-0">
+                    <div className="animate-neg-spin-slow">
+                    <img src="./src/assets/avatar/2.png" className="w-[54px] h-[54px]" alt="" />
+                    </div>
+                  </div>
+                  <div className="absolute top-[50%] left-[50%] -mt-[50px] -ml-[50px]">
+                    <div className="animate-neg-spin-slow">
+                    <img src="./src/assets/avatar/8.png" className="w-[120px] h-[120px]" alt="" />
+                    </div>
+                  </div>
+                
+                </div>
+            </div>
+            </div>
           </section>
         </div>
       </div>
