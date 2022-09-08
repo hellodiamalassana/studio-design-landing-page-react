@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function Card(props) {
+interface cardProps {
+  className?: string;
+  color: string;
+  icon: string;
+  title: string;
+  subtitle: string;
+}
+export default function Card(props: cardProps) {
   return (
     <div className={props.className}>
       <div className="h-[379px] w-[308px] drop-shadow-md rounded-3xl bg-white">
