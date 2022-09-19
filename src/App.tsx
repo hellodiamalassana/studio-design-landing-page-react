@@ -5,9 +5,12 @@ import BoxSearchIcon from "./assets/icons/box-search.svg";
 import ChartIcon from "./assets/icons/chart-square.svg";
 import CodeIcon from "./assets/icons/code.svg";
 import WalletIcon from "./assets/icons/empty-wallet.svg";
+import MenuIcon from "./assets/icons/menu-icon.svg";
 import { BaseButton, ServiceCard } from "./components/Global/";
+import { animateScroll as scroll, scroller, Link, Element } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 AOS.init({
   once: false,
   mirror: true,
@@ -15,35 +18,108 @@ AOS.init({
   easing: "ease",
 });
 
+const scrollTo = () => {
+  scroller.scrollTo("scroll-to-element", {
+    duration: 800,
+    delay: 0,
+    smooth: "easeInOutQuart",
+  });
+};
+
 function App() {
+  const [isActive, setActive] = useState(false);
+  const onClickMenu = () => {
+    setActive(!isActive);
+  };
+
   return (
     <div className="bg-white font-averta h-full ">
       <div className="container   overflow-x-hidden px-5 scroll-smooth md:mx-auto">
-        <div className="flex justify-between py-8">
+        <div className="flex flex-wrap items-center justify-between w-full py-8">
           <h1 className="font-bold text-2xl">A+ Studio</h1>
-          <div className="hidden md:block">
-            <ul className="flex flex-col md:flex-row">
+          <div>
+            <img
+              onClick={() => onClickMenu()}
+              className="h-6 w-6 cursor-pointer md:hidden block"
+              src={MenuIcon}
+            />
+          </div>
+          <div
+            className={`${
+              isActive ? "hidden" : null
+            } w-full md:flex md:items-center md:w-auto`}
+          >
+            <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 pt-5">
               <li className="mr-10 cursor-pointer">
-                ˜<a>Home</a>
+                <Link
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Home
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>What We Do</a>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  What We Do
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>Service</a>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Services
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>Project</a>
+                <Link
+                  to="product"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Project
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>Blog</a>
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Blog
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>Contact</a>
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
         </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 md:gap-4 items-center">
           <div className="col-span-5 relative">
             <div className="relative z-20">
@@ -124,7 +200,7 @@ function App() {
           </section>
 
           {/* Services */}
-          <section className="relative">
+          <section id="services" className="relative">
             <div className="absolute w-[1047px] h-[619px] bg-[#F4F9FF] rounded-tl-[150px] -right-[5vw]"></div>
             <div className="flex  flex-col lg:flex-row items-center justify-between w-full pt-40">
               <div className="relative z-20">
@@ -186,47 +262,50 @@ function App() {
           </section>
 
           <section className="pt-40">
-            <div className="flex  flex-col-reverse space-y-20 space-y-reverse lg-space-y-0 lg:flex-row w-full items-center">
-              <div className="w-full relative">
-                <div className="relative z-20">
-                  <iframe
-                    data-aos="fade-right"
-                    className="rounded-3xl shadow-xl w-full lg:w-4/5 h-[372px]"
-                    src="https://www.youtube.com/embed/lxvKgxw-P-4"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
-                </div>
-                <div className="h-24 w-24 bg-[#FFF5DB] rounded-full absolute right-28 -bottom-12 z-10"></div>
-              </div>
-              <div className="w-full relative">
-                <div>
-                  <div className="h-40 w-40 bg-[#EFF1FF] rounded-br-[150px] absolute -left-10 -top-10 z-10"></div>
-
+            <Element name="product">
+              <div className="flex  flex-col-reverse space-y-20 space-y-reverse lg-space-y-0 lg:flex-row w-full items-center">
+                <div className="w-full relative">
                   <div className="relative z-20">
-                    <div
-                      data-aos="fade-up"
-                      data-aos-delay="500"
-                      className="text-black text-4xl"
-                    >
-                      Great Digital Product <br /> Agency since 2016{" "}
+                    <iframe
+                      data-aos="fade-right"
+                      className="rounded-3xl shadow-xl w-full lg:w-4/5 h-[372px]"
+                      src="https://www.youtube.com/embed/lxvKgxw-P-4"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
+                  <div className="h-24 w-24 bg-[#FFF5DB] rounded-full absolute right-28 -bottom-12 z-10"></div>
+                </div>
+                <div className="w-full relative">
+                  <div>
+                    <div className="h-40 w-40 bg-[#EFF1FF] rounded-br-[150px] absolute -left-10 -top-10 z-10"></div>
+
+                    <div className="relative z-20">
+                      <div
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                        className="text-black text-4xl"
+                      >
+                        Great Digital Product <br /> Agency since 2016{" "}
+                      </div>
+                      <p
+                        data-aos="fade-up"
+                        data-aos-delay="1000"
+                        className="text-grey pt-5"
+                      >
+                        {" "}
+                        Our Business Plan is a written document describing a
+                        company's core business activites, Objectives, and how
+                        it plans to achieve its goals. Our goal is to provide
+                        our client high quality Product with modern idea
+                        accordingly their budgets and according thir
+                        reuirements.
+                      </p>
                     </div>
-                    <p
-                      data-aos="fade-up"
-                      data-aos-delay="1000"
-                      className="text-grey pt-5"
-                    >
-                      {" "}
-                      Our Business Plan is a written document describing a
-                      company's core business activites, Objectives, and how it
-                      plans to achieve its goals. Our goal is to provide our
-                      client high quality Product with modern idea accordingly
-                      their budgets and according thir reuirements.
-                    </p>
                   </div>
                 </div>
               </div>
-            </div>
+            </Element>
           </section>
 
           <section className="pt-40">
@@ -385,56 +464,58 @@ function App() {
           </section>
 
           <section className="pt-40">
-            <div className="relative h-[292px]">
-              <div className="border-0 rounded-3xl h-full  bg-[#F4F9FF] rounded-br-0 rounded-tr-0 lg:rounded-br-[100px] lg:rounded-tr-[100px]">
-                <div className="flex">
-                  <div className="w-full"></div>
-                  <div className="w-full">
-                    <div className="flex justify-end">
-                      <div className="h-[292px] rounded-br-[100px] rounded-tr-[100px] rounded-tl-[190px] rounded-bl-[240px] w-3/4 bg-blue-700 hidden lg:block"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute z-10 top-0 h-full w-full">
-                <div className="flex flex-col lg:flex-row w-full items-center h-full justify-around">
-                  <div className="flex flex-col space-y-4">
-                    <div
-                      data-aos="fade-up"
-                      data-aos-delay="500"
-                      className="text-4xl font-extrabold"
-                    >
-                      Subscribe Newsletter
-                    </div>
-                    <div
-                      data-aos="fade-up"
-                      data-aos-delay="700"
-                      className="text-[#757575]"
-                    >
-                      I will update good news and promotion service not spam
-                    </div>
-                  </div>
-                  <div className="w-full lg:w-1/2">
-                    <div
-                      data-aos="fade-up"
-                      className="flex items-center space-x-2 p-3 w-full rounded-full justify-between bg-white h-full shadow-3xl"
-                    >
-                      <div className="w-full h-full pl-4">
-                        <input
-                          className="w-full h-full focus:outline-0"
-                          placeholder="Enter your email address..."
-                        />
-                      </div>
-                      <div>
-                        <BaseButton className="whitespace-nowrap">
-                          Contact Now
-                        </BaseButton>
+            <Element name="contact">
+              <div className="relative h-[292px]">
+                <div className="border-0 rounded-3xl h-full  bg-[#F4F9FF] rounded-br-0 rounded-tr-0 lg:rounded-br-[100px] lg:rounded-tr-[100px]">
+                  <div className="flex">
+                    <div className="w-full"></div>
+                    <div className="w-full">
+                      <div className="flex justify-end">
+                        <div className="h-[292px] rounded-br-[100px] rounded-tr-[100px] rounded-tl-[190px] rounded-bl-[240px] w-3/4 bg-blue-700 hidden lg:block"></div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="absolute z-10 top-0 h-full w-full">
+                  <div className="flex flex-col lg:flex-row w-full items-center h-full justify-around">
+                    <div className="flex flex-col space-y-4">
+                      <div
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                        className="text-4xl font-extrabold"
+                      >
+                        Subscribe Newsletter
+                      </div>
+                      <div
+                        data-aos="fade-up"
+                        data-aos-delay="700"
+                        className="text-[#757575]"
+                      >
+                        I will update good news and promotion service not spam
+                      </div>
+                    </div>
+                    <div className="w-full lg:w-1/2">
+                      <div
+                        data-aos="fade-up"
+                        className="flex items-center space-x-2 p-3 w-full rounded-full justify-between bg-white h-full shadow-3xl"
+                      >
+                        <div className="w-full h-full pl-4">
+                          <input
+                            className="w-full h-full focus:outline-0"
+                            placeholder="Enter your email address..."
+                          />
+                        </div>
+                        <div>
+                          <BaseButton className="whitespace-nowrap">
+                            Contact Now
+                          </BaseButton>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Element>
           </section>
           <section className="pt-40 pb-20">
             <div className="border-t border-b">
