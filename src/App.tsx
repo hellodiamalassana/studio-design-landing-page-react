@@ -46,7 +46,7 @@ function App() {
           </div>
           <div
             className={`${
-              isActive ? "hidden" : null
+              !isActive ? "hidden" : null
             } w-full md:flex md:items-center md:w-auto`}
           >
             <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 pt-5">
