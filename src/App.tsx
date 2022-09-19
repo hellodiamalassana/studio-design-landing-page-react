@@ -386,18 +386,18 @@ function App() {
 
           <section className="pt-40">
             <div className="relative h-[292px]">
-              <div className="border-0 rounded-3xl h-full  bg-[#F4F9FF] rounded-br-[100px] rounded-tr-[100px]">
+              <div className="border-0 rounded-3xl h-full  bg-[#F4F9FF] rounded-br-0 rounded-tr-0 lg:rounded-br-[100px] lg:rounded-tr-[100px]">
                 <div className="flex">
                   <div className="w-full"></div>
                   <div className="w-full">
                     <div className="flex justify-end">
-                      <div className="h-[292px] rounded-br-[100px] rounded-tr-[100px] rounded-tl-[190px] rounded-bl-[240px] w-3/4 bg-blue-700"></div>
+                      <div className="h-[292px] rounded-br-[100px] rounded-tr-[100px] rounded-tl-[190px] rounded-bl-[240px] w-3/4 bg-blue-700 hidden md:block"></div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="absolute z-10 top-0 h-full w-full">
-                <div className="flex w-full items-center h-full justify-around">
+                <div className="flex flex-col lg:flex-row w-full items-center h-full justify-around">
                   <div className="flex flex-col space-y-4">
                     <div
                       data-aos="fade-up"
@@ -414,7 +414,7 @@ function App() {
                       I will update good news and promotion service not spam
                     </div>
                   </div>
-                  <div className="w-1/2">
+                  <div className="w-full lg:w-1/2">
                     <div
                       data-aos="fade-up"
                       className="flex items-center space-x-2 p-3 w-full rounded-full justify-between bg-white h-full shadow-3xl"

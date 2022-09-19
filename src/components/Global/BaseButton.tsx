@@ -9,7 +9,7 @@ function BaseButton({
 }) {
   return (
     <button
-      className={`bg-primary text-white py-[20px] px-[40px] rounded-full whitespace-nowrap ${className}`}
+      className={`bg-primary text-white text-sm py-3 lg:py-5 px-5 lg:px-10 rounded-full whitespace-nowrap ${className}`}
     >
       {children}
     </button>
