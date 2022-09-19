@@ -18,7 +18,7 @@ AOS.init({
 function App() {
   return (
     <div className="bg-white font-averta h-full ">
-      <div className="container   overflow-x-hidden px-5 scroll-smooth lg:mx-auto">
+      <div className="container   overflow-x-hidden px-5 scroll-smooth md:mx-auto">
         <div className="flex justify-between py-8">
           <h1 className="font-bold text-2xl">A+ Studio</h1>
           <div className="hidden md:block">
@@ -87,7 +87,7 @@ function App() {
         </div>
         <div>
           {/* Clients */}
-          <section className="md:flex pt-40">
+          <section className="lg:flex pt-40">
             <div>
               <div
                 data-aos="fade-up"
@@ -106,7 +106,7 @@ function App() {
               </p>
             </div>
             <div className="flex items-center md:items-end w-full pt-10 lg:pt-0">
-              <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center w-full space-y-10 lg:space-y-0">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-evenly items-center w-full space-y-10 lg:space-y-0">
                 <div data-aos="fade-left" data-aos-delay="100">
                   <img src="./src/assets/clients/google.png" alt="" />
                 </div>
@@ -391,7 +391,7 @@ function App() {
                   <div className="w-full"></div>
                   <div className="w-full">
                     <div className="flex justify-end">
-                      <div className="h-[292px] rounded-br-[100px] rounded-tr-[100px] rounded-tl-[190px] rounded-bl-[240px] w-3/4 bg-blue-700 hidden md:block"></div>
+                      <div className="h-[292px] rounded-br-[100px] rounded-tr-[100px] rounded-tl-[190px] rounded-bl-[240px] w-3/4 bg-blue-700 hidden lg:block"></div>
                     </div>
                   </div>
                 </div>
@@ -441,7 +441,7 @@ function App() {
               <div className="pt-16 pb-16">
                 <div className="grid grid-cols-1 lg:grid-cols-6">
                   <div className="lg:col-span-2">
-                    <div className="pb-7">A+ Studio</div>
+                    <div className="pb-7 font-black">A+ Studio</div>
                     <div className="w-1/2">
                       Leading digital agency with solid design and development
                       expertise. We build readymade websites, mobile
@@ -449,7 +449,9 @@ function App() {
                     </div>
                   </div>
                   <div>
-                    <div className="font-extrabold pb-7 ">What We do</div>
+                    <div className="font-black pb-7 pt-10 md:pt-0">
+                      What We do
+                    </div>
                     <div>
                       <ul className="font-thin text-xs leading-8">
                         <li>Web Design</li>
@@ -460,35 +462,31 @@ function App() {
                     </div>
                   </div>
                   <div>
-                    <div className="font-extrabold pb-7 ">Company</div>
+                    <div className="font-black pb-7 pt-10 md:pt-0">Company</div>
                     <div>
                       <ul className="font-thin text-xs leading-8">
-                        <li>Web Design</li>
-                        <li>App Design</li>
-                        <li>Social Media Manage</li>
-                        <li>Market Analysis Project</li>
+                        <li>About Us</li>
+                        <li>Career</li>
+                        <li>Become Investor</li>
                       </ul>
                     </div>
                   </div>
                   <div>
-                    <div className="font-extrabold pb-7 ">Support</div>
+                    <div className="font-black pb-7 pt-10 md:pt-0">Support</div>
                     <div>
                       <ul className="font-thin text-xs leading-8">
-                        <li>Web Design</li>
-                        <li>App Design</li>
-                        <li>Social Media Manage</li>
-                        <li>Market Analysis Project</li>
+                        <li>FAQ</li>
+                        <li>Policy</li>
+                        <li>Business</li>
                       </ul>
                     </div>
                   </div>
                   <div>
-                    <div className="font-extrabold pb-7 ">Contact</div>
+                    <div className="font-black pb-7 pt-10 md:pt-0">Contact</div>
                     <div>
                       <ul className="font-thin text-xs leading-8">
-                        <li>Web Design</li>
-                        <li>App Design</li>
-                        <li>Social Media Manage</li>
-                        <li>Market Analysis Project</li>
+                        <li>WhatsApp</li>
+                        <li>Support 24</li>
                       </ul>
                     </div>
                   </div>
