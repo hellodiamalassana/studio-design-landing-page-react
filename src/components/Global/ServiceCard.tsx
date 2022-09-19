@@ -9,7 +9,11 @@ interface cardProps {
 }
 export default function Card(props: cardProps) {
   return (
-    <div className={props.className}>
+    <div
+      data-aos="fade-in"
+      data-aos-duration="1000"
+      className={props.className}
+    >
       <div className="h-[379px] w-[308px] drop-shadow-md rounded-3xl bg-white">
         <div className="flex items-center h-full w-full px-5 py-10">
           <div className="flex flex-col justify-between h-full items-center">

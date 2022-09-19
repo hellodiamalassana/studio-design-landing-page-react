@@ -6,31 +6,39 @@ import ChartIcon from "./assets/icons/chart-square.svg";
 import CodeIcon from "./assets/icons/code.svg";
 import WalletIcon from "./assets/icons/empty-wallet.svg";
 import { BaseButton, ServiceCard } from "./components/Global/";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({
+  once: false,
+  mirror: true,
+  offset: 120,
+  easing: "ease",
+});
 
 function App() {
   return (
     <div className="bg-white font-averta h-full ">
       <div className="container   overflow-x-hidden px-5 scroll-smooth lg:mx-auto">
         <div className="flex justify-between py-8">
-          <h1 className="font-bold">A+ Studio</h1>
+          <h1 className="font-bold text-2xl">A+ Studio</h1>
           <div className="hidden md:block">
             <ul className="flex flex-col md:flex-row">
-              <li className="mr-10">
-                <a>Home</a>
+              <li className="mr-10 cursor-pointer">
+                ˜<a>Home</a>
               </li>
-              <li className="mr-10">
+              <li className="mr-10 cursor-pointer">
                 <a>What We Do</a>
               </li>
-              <li className="mr-10">
+              <li className="mr-10 cursor-pointer">
                 <a>Service</a>
               </li>
-              <li className="mr-10">
+              <li className="mr-10 cursor-pointer">
                 <a>Project</a>
               </li>
-              <li className="mr-10">
+              <li className="mr-10 cursor-pointer">
                 <a>Blog</a>
               </li>
-              <li className="mr-10">
+              <li className="mr-10 cursor-pointer">
                 <a>Contact</a>
               </li>
             </ul>
@@ -39,17 +47,25 @@ function App() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 md:gap-4 items-center">
           <div className="col-span-5 relative">
             <div className="relative z-20">
-              <div className="text-black text-4xl">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="500"
+                className="text-black text-4xl"
+              >
                 A Digital Product Agency
               </div>
-              <div className="py-10 w-full lg:w-3/5">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="py-10 w-full lg:w-3/5"
+              >
                 <p className="text-sx text-[16px] font-thin text-[#565656]">
                   Leading digital agency with solid design and development
                   expertise. We build readymade websites, mobile applications,
                   and elaborate online business services.
                 </p>
               </div>
-              <div>
+              <div data-aos="fade-down" data-aos-duration="1500">
                 <BaseButton>Contact Now</BaseButton>
               </div>
             </div>
@@ -59,7 +75,11 @@ function App() {
           </div>
           <div className="col-span-7 relative pt-10">
             <div className="h-40 w-40 rounded-full bg-[#DAE9FF] absolute -left-20 z-10"></div>
-            <div className="relative z-20 ">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              className="relative z-20 "
+            >
               <img src={StudioRoomImg} alt="" className="rounded-tr-2xl" />
             </div>
             <div className="h-40 w-40 bg-[#FFF5DB] rounded-br-[100px] absolute right-20 -bottom-24 z-10"></div>
@@ -69,24 +89,34 @@ function App() {
           {/* Clients */}
           <section className="md:flex pt-40">
             <div>
-              <div className="text-black text-4xl">Our Client</div>
-              <p className="text-grey">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="500"
+                className="text-black text-4xl"
+              >
+                Our Client
+              </div>
+              <p
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="text-grey"
+              >
                 {" "}
                 Several selected clients, who already believe in ourr service
               </p>
             </div>
             <div className="flex items-center md:items-end w-full pt-10 lg:pt-0">
               <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center w-full space-y-10 lg:space-y-0">
-                <div>
+                <div data-aos="fade-left" data-aos-delay="100">
                   <img src="./src/assets/clients/google.png" alt="" />
                 </div>
-                <div>
+                <div data-aos="fade-left" data-aos-delay="200">
                   <img src="./src/assets/clients/airbnb.png" alt="" />
                 </div>
-                <div>
+                <div data-aos="fade-left" data-aos-delay="300">
                   <img src="./src/assets/clients/ubereats.png" alt="" />
                 </div>
-                <div>
+                <div data-aos="fade-left" data-aos-delay="400">
                   <img src="./src/assets/clients/amazon.png" alt="" />
                 </div>
               </div>
@@ -98,10 +128,18 @@ function App() {
             <div className="absolute w-[1047px] h-[619px] bg-[#F4F9FF] rounded-tl-[150px] -right-[5vw]"></div>
             <div className="flex  flex-col lg:flex-row items-center justify-between w-full pt-40">
               <div className="relative z-20">
-                <div className="text-black text-4xl">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="500"
+                  className="text-black text-4xl"
+                >
                   How can we help your Business ?
                 </div>
-                <p className="text-grey">
+                <p
+                  className="text-grey"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                >
                   {" "}
                   We build readymade websites, mobile applications, and
                   elaborate online business services.
@@ -152,6 +190,7 @@ function App() {
               <div className="w-full relative">
                 <div className="relative z-20">
                   <iframe
+                    data-aos="fade-right"
                     className="rounded-3xl shadow-xl w-full lg:w-4/5 h-[372px]"
                     src="https://www.youtube.com/embed/lxvKgxw-P-4"
                     title="YouTube video player"
@@ -165,10 +204,18 @@ function App() {
                   <div className="h-40 w-40 bg-[#EFF1FF] rounded-br-[150px] absolute -left-10 -top-10 z-10"></div>
 
                   <div className="relative z-20">
-                    <div className="text-black text-4xl">
+                    <div
+                      data-aos="fade-up"
+                      data-aos-delay="500"
+                      className="text-black text-4xl"
+                    >
                       Great Digital Product <br /> Agency since 2016{" "}
                     </div>
-                    <p className="text-grey pt-5">
+                    <p
+                      data-aos="fade-up"
+                      data-aos-delay="1000"
+                      className="text-grey pt-5"
+                    >
                       {" "}
                       Our Business Plan is a written document describing a
                       company's core business activites, Objectives, and how it
@@ -185,19 +232,31 @@ function App() {
           <section className="pt-40">
             <div className="flex justify-center">
               <div>
-                <div className="text-black text-4xl">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  className="text-black text-4xl"
+                >
                   What our happy client say
                 </div>
-                <p className="text-grey pt-5">
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="700"
+                  className="text-grey pt-5"
+                >
                   Several selected clients, who already believe in our service.
                 </p>
               </div>
             </div>
             {/* Testimonals */}
-            <div className="flex flex-col space-x-2 justify-between lg:flex-row h-full w-full items-center">
+            <div className="flex flex-col space-x-2 justify-between lg:flex-row h-full w-full items-center pt-10">
               <div className="w-full lg:w-2/3">
                 <div className="flex flex-col space-y-5 lg:space-y-0 lg:flex-row items-center space-x-10">
-                  <div className="w-2/3 lg:w-full">
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    className="w-2/3 lg:w-full"
+                  >
                     <div className="relative">
                       <img
                         src="./src/assets/avatar/9.png"
@@ -210,10 +269,18 @@ function App() {
                     </div>
                   </div>
                   <div className="w-full">
-                    <div className="text-black font-bold text-2xl">
+                    <div
+                      data-aos="fade-left"
+                      data-aos-delay="500"
+                      className="text-black font-bold text-2xl"
+                    >
                       Matthew Paul
                     </div>
-                    <div className="font-normal text-sm leading-relaxed text-[#565656] pt-5">
+                    <div
+                      data-aos="fade-right"
+                      data-aos-delay="500"
+                      className="font-normal text-sm leading-relaxed text-[#565656] pt-5"
+                    >
                       Perfect, very good job! Thank you for the amazing design
                       and work. Really impressed with the high quality and quick
                       turnaround time. Highly recommend.
@@ -224,7 +291,11 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="w-[340px] relative">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="w-[340px] relative"
+              >
                 <div className="animate-spin-slow relative z-20">
                   <div className=" w-[600px] h-[415px]">
                     <div className="absolute left-[40%] ">
@@ -328,15 +399,26 @@ function App() {
               <div className="absolute z-10 top-0 h-full w-full">
                 <div className="flex w-full items-center h-full justify-around">
                   <div className="flex flex-col space-y-4">
-                    <div className="text-4xl font-extrabold">
+                    <div
+                      data-aos="fade-up"
+                      data-aos-delay="500"
+                      className="text-4xl font-extrabold"
+                    >
                       Subscribe Newsletter
                     </div>
-                    <div className="text-[#757575]">
+                    <div
+                      data-aos="fade-up"
+                      data-aos-delay="700"
+                      className="text-[#757575]"
+                    >
                       I will update good news and promotion service not spam
                     </div>
                   </div>
                   <div className="w-1/2">
-                    <div className="flex items-center space-x-2 p-3 w-full rounded-full justify-between bg-white h-full shadow-3xl">
+                    <div
+                      data-aos="fade-up"
+                      className="flex items-center space-x-2 p-3 w-full rounded-full justify-between bg-white h-full shadow-3xl"
+                    >
                       <div className="w-full h-full pl-4">
                         <input
                           className="w-full h-full focus:outline-0"
