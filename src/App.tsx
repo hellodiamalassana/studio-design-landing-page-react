@@ -1,5 +1,14 @@
 import { useState } from "react";
 import StudioRoomImg from "./assets/landing-bg.png";
+import Avatar9 from "./assets/avatar/9.png";
+import Avatar1 from "./assets/avatar/1.png";
+import Avatar2 from "./assets/avatar/2.png";
+import Avatar3 from "./assets/avatar/3.png";
+import Avatar4 from "./assets/avatar/4.png";
+import Avatar5 from "./assets/avatar/5.png";
+import Avatar6 from "./assets/avatar/6.png";
+import Avatar7 from "./assets/avatar/7.png";
+import Avatar8 from "./assets/avatar/8.png";
 import Dots from "./assets/dots.svg";
 import BoxSearchIcon from "./assets/icons/box-search.svg";
 import ChartIcon from "./assets/icons/chart-square.svg";
@@ -338,7 +347,7 @@ function App() {
                   >
                     <div className="relative">
                       <img
-                        src="./src/assets/avatar/9.png"
+                        src={Avatar9}
                         className="rounded-br-full relative rounded-bl-full rounded-tl-full z-10"
                         alt=""
                       />
@@ -379,13 +388,13 @@ function App() {
                   <div className=" w-[600px] h-[415px]">
                     <div className="absolute left-[40%] ">
                       <div className="animate-neg-spin-slow">
-                        <img src="./src/assets/avatar/1.png" alt="" />
+                        <img src={Avatar1} alt="" />
                       </div>
                     </div>
                     <div className="absolute top-[20%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/5.png"
+                          src={Avatar5}
                           className="w-[98px] h-[98px]"
                           alt=""
                         />
@@ -394,7 +403,7 @@ function App() {
                     <div className="absolute top-[60%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/3.png"
+                          src={Avatar3}
                           className="w-[68px] h-[68px]"
                           alt=""
                         />
@@ -403,7 +412,7 @@ function App() {
                     <div className="absolute bottom-0 left-[30%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/6.png"
+                          src={Avatar6}
                           className="w-[98px] h-[98px]"
                           alt=""
                         />
@@ -412,7 +421,7 @@ function App() {
                     <div className="absolute bottom-[20%] right-[10%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/7.png"
+                          src={Avatar7}
                           className="w-[68px] h-[68px]"
                           alt=""
                         />
@@ -421,7 +430,7 @@ function App() {
                     <div className="absolute top-[15%] right-[10%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/4.png"
+                          src={Avatar4}
                           className="w-[54px] h-[54px]"
                           alt=""
                         />
@@ -430,7 +439,7 @@ function App() {
                     <div className="absolute top-[40%] right-0">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/2.png"
+                          src={Avatar2}
                           className="w-[54px] h-[54px]"
                           alt=""
                         />
@@ -439,7 +448,7 @@ function App() {
                     <div className="absolute top-[40%] right-0">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/2.png"
+                          src={Avatar2}
                           className="w-[54px] h-[54px]"
                           alt=""
                         />
@@ -448,7 +457,7 @@ function App() {
                     <div className="absolute top-[50%] left-[50%] -mt-[50px] -ml-[50px]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/8.png"
+                          src={Avatar8}
                           className="w-[120px] h-[120px]"
                           alt=""
                         />
