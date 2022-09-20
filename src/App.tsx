@@ -191,7 +191,7 @@ function App() {
                 data-aos-duration="500"
                 className="text-black text-4xl"
               >
-                Our Client
+                Our Clients
               </div>
               <p
                 data-aos="fade-up"
