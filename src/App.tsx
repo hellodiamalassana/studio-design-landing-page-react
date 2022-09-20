@@ -9,6 +9,12 @@ import Avatar5 from "./assets/avatar/5.png";
 import Avatar6 from "./assets/avatar/6.png";
 import Avatar7 from "./assets/avatar/7.png";
 import Avatar8 from "./assets/avatar/8.png";
+
+import GoogleImg from "./assets/clients/google.png";
+import AirbnbImg from "./assets/clients/airbnb.png";
+import UbereatsImg from "./assets/clients/ubereats.png";
+import AmazonImg from "./assets/clients/amazon.png";
+
 import Dots from "./assets/dots.svg";
 import BoxSearchIcon from "./assets/icons/box-search.svg";
 import ChartIcon from "./assets/icons/chart-square.svg";
@@ -48,6 +54,7 @@ function App() {
           <h1 className="font-bold text-2xl">A+ Studio</h1>
           <div>
             <img
+              loading="lazy"
               onClick={() => onClickMenu()}
               className="h-6 w-6 cursor-pointer md:hidden block"
               src={MenuIcon}
@@ -165,7 +172,12 @@ function App() {
               data-aos-duration="1000"
               className="relative z-20 "
             >
-              <img src={StudioRoomImg} alt="" className="rounded-tr-2xl" />
+              <img
+                loading="lazy"
+                src={StudioRoomImg}
+                alt=""
+                className="rounded-tr-2xl"
+              />
             </div>
             <div className="h-40 w-40 bg-[#FFF5DB] rounded-br-[100px] absolute right-20 -bottom-24 z-10"></div>
           </div>
@@ -193,16 +205,16 @@ function App() {
             <div className="flex items-center md:items-end w-full pt-10 lg:pt-0">
               <div className="flex flex-col lg:flex-row justify-center lg:justify-evenly items-center w-full space-y-10 lg:space-y-0">
                 <div data-aos="fade-left" data-aos-delay="100">
-                  <img src="./src/assets/clients/google.png" alt="" />
+                  <img loading="lazy" src={GoogleImg} alt="" />
                 </div>
                 <div data-aos="fade-left" data-aos-delay="200">
-                  <img src="./src/assets/clients/airbnb.png" alt="" />
+                  <img loading="lazy" src={AirbnbImg} alt="" />
                 </div>
                 <div data-aos="fade-left" data-aos-delay="300">
-                  <img src="./src/assets/clients/ubereats.png" alt="" />
+                  <img loading="lazy" src={UbereatsImg} alt="" />
                 </div>
                 <div data-aos="fade-left" data-aos-delay="400">
-                  <img src="./src/assets/clients/amazon.png" alt="" />
+                  <img loading="lazy" src={AmazonImg} alt="" />
                 </div>
               </div>
             </div>
@@ -230,7 +242,7 @@ function App() {
                   elaborate online business services.
                 </p>
                 <div className="absolute -bottom-28 z-10 -left-20">
-                  <img src={Dots} />
+                  <img loading="lazy" src={Dots} />
                 </div>
               </div>
               <div className="flex items-center justify-center w-full">
@@ -347,6 +359,7 @@ function App() {
                   >
                     <div className="relative">
                       <img
+                        loading="lazy"
                         src={Avatar9}
                         className="rounded-br-full relative rounded-bl-full rounded-tl-full z-10"
                         alt=""
@@ -388,12 +401,13 @@ function App() {
                   <div className=" w-[600px] h-[415px]">
                     <div className="absolute left-[40%] ">
                       <div className="animate-neg-spin-slow">
-                        <img src={Avatar1} alt="" />
+                        <img loading="lazy" src={Avatar1} alt="" />
                       </div>
                     </div>
                     <div className="absolute top-[20%]">
                       <div className="animate-neg-spin-slow">
                         <img
+                          loading="lazy"
                           src={Avatar5}
                           className="w-[98px] h-[98px]"
                           alt=""
@@ -403,6 +417,7 @@ function App() {
                     <div className="absolute top-[60%]">
                       <div className="animate-neg-spin-slow">
                         <img
+                          loading="lazy"
                           src={Avatar3}
                           className="w-[68px] h-[68px]"
                           alt=""
@@ -412,6 +427,7 @@ function App() {
                     <div className="absolute bottom-0 left-[30%]">
                       <div className="animate-neg-spin-slow">
                         <img
+                          loading="lazy"
                           src={Avatar6}
                           className="w-[98px] h-[98px]"
                           alt=""
@@ -421,6 +437,7 @@ function App() {
                     <div className="absolute bottom-[20%] right-[10%]">
                       <div className="animate-neg-spin-slow">
                         <img
+                          loading="lazy"
                           src={Avatar7}
                           className="w-[68px] h-[68px]"
                           alt=""
@@ -430,6 +447,7 @@ function App() {
                     <div className="absolute top-[15%] right-[10%]">
                       <div className="animate-neg-spin-slow">
                         <img
+                          loading="lazy"
                           src={Avatar4}
                           className="w-[54px] h-[54px]"
                           alt=""
@@ -439,6 +457,7 @@ function App() {
                     <div className="absolute top-[40%] right-0">
                       <div className="animate-neg-spin-slow">
                         <img
+                          loading="lazy"
                           src={Avatar2}
                           className="w-[54px] h-[54px]"
                           alt=""
@@ -448,6 +467,7 @@ function App() {
                     <div className="absolute top-[40%] right-0">
                       <div className="animate-neg-spin-slow">
                         <img
+                          loading="lazy"
                           src={Avatar2}
                           className="w-[54px] h-[54px]"
                           alt=""
@@ -457,6 +477,7 @@ function App() {
                     <div className="absolute top-[50%] left-[50%] -mt-[50px] -ml-[50px]">
                       <div className="animate-neg-spin-slow">
                         <img
+                          loading="lazy"
                           src={Avatar8}
                           className="w-[120px] h-[120px]"
                           alt=""
