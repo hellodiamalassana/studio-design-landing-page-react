@@ -1,13 +1,31 @@
 import { useState } from "react";
 import StudioRoomImg from "./assets/landing-bg.png";
+import Avatar9 from "./assets/avatar/9.png";
+import Avatar1 from "./assets/avatar/1.png";
+import Avatar2 from "./assets/avatar/2.png";
+import Avatar3 from "./assets/avatar/3.png";
+import Avatar4 from "./assets/avatar/4.png";
+import Avatar5 from "./assets/avatar/5.png";
+import Avatar6 from "./assets/avatar/6.png";
+import Avatar7 from "./assets/avatar/7.png";
+import Avatar8 from "./assets/avatar/8.png";
+
+import GoogleImg from "./assets/clients/google.png";
+import AirbnbImg from "./assets/clients/airbnb.png";
+import UbereatsImg from "./assets/clients/ubereats.png";
+import AmazonImg from "./assets/clients/amazon.png";
+
 import Dots from "./assets/dots.svg";
 import BoxSearchIcon from "./assets/icons/box-search.svg";
 import ChartIcon from "./assets/icons/chart-square.svg";
 import CodeIcon from "./assets/icons/code.svg";
 import WalletIcon from "./assets/icons/empty-wallet.svg";
+import MenuIcon from "./assets/icons/menu-icon.svg";
 import { BaseButton, ServiceCard } from "./components/Global/";
+import { animateScroll as scroll, scroller, Link, Element } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 AOS.init({
   once: false,
   mirror: true,
@@ -15,35 +33,109 @@ AOS.init({
   easing: "ease",
 });
 
+const scrollTo = () => {
+  scroller.scrollTo("scroll-to-element", {
+    duration: 800,
+    delay: 0,
+    smooth: "easeInOutQuart",
+  });
+};
+
 function App() {
+  const [isActive, setActive] = useState(false);
+  const onClickMenu = () => {
+    setActive(!isActive);
+  };
+
   return (
     <div className="bg-white font-averta h-full ">
-      <div className="container   overflow-x-hidden px-5 scroll-smooth lg:mx-auto">
-        <div className="flex justify-between py-8">
+      <div className="container   overflow-x-hidden px-5 scroll-smooth md:mx-auto">
+        <div className="flex flex-wrap items-center justify-between w-full py-8">
           <h1 className="font-bold text-2xl">A+ Studio</h1>
-          <div className="hidden md:block">
-            <ul className="flex flex-col md:flex-row">
+          <div>
+            <img
+              loading="lazy"
+              onClick={() => onClickMenu()}
+              className="h-6 w-6 cursor-pointer md:hidden block"
+              src={MenuIcon}
+            />
+          </div>
+          <div
+            className={`${
+              !isActive ? "hidden" : null
+            } w-full md:flex md:items-center md:w-auto`}
+          >
+            <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 pt-5">
               <li className="mr-10 cursor-pointer">
-                ˜<a>Home</a>
+                <Link
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Home
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>What We Do</a>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  What We Do
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>Service</a>
+                <Link
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Services
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>Project</a>
+                <Link
+                  to="product"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Project
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>Blog</a>
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Blog
+                </Link>
               </li>
               <li className="mr-10 cursor-pointer">
-                <a>Contact</a>
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => scrollTo()}
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
         </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 md:gap-4 items-center">
           <div className="col-span-5 relative">
             <div className="relative z-20">
@@ -80,21 +172,26 @@ function App() {
               data-aos-duration="1000"
               className="relative z-20 "
             >
-              <img src={StudioRoomImg} alt="" className="rounded-tr-2xl" />
+              <img
+                loading="lazy"
+                src={StudioRoomImg}
+                alt=""
+                className="rounded-tr-2xl"
+              />
             </div>
             <div className="h-40 w-40 bg-[#FFF5DB] rounded-br-[100px] absolute right-20 -bottom-24 z-10"></div>
           </div>
         </div>
         <div>
           {/* Clients */}
-          <section className="md:flex pt-40">
+          <section className="lg:flex pt-40">
             <div>
               <div
                 data-aos="fade-up"
                 data-aos-duration="500"
                 className="text-black text-4xl"
               >
-                Our Client
+                Our Clients
               </div>
               <p
                 data-aos="fade-up"
@@ -106,25 +203,25 @@ function App() {
               </p>
             </div>
             <div className="flex items-center md:items-end w-full pt-10 lg:pt-0">
-              <div className="flex flex-col md:flex-row justify-center md:justify-evenly items-center w-full space-y-10 lg:space-y-0">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-evenly items-center w-full space-y-10 lg:space-y-0">
                 <div data-aos="fade-left" data-aos-delay="100">
-                  <img src="./src/assets/clients/google.png" alt="" />
+                  <img loading="lazy" src={GoogleImg} alt="" />
                 </div>
                 <div data-aos="fade-left" data-aos-delay="200">
-                  <img src="./src/assets/clients/airbnb.png" alt="" />
+                  <img loading="lazy" src={AirbnbImg} alt="" />
                 </div>
                 <div data-aos="fade-left" data-aos-delay="300">
-                  <img src="./src/assets/clients/ubereats.png" alt="" />
+                  <img loading="lazy" src={UbereatsImg} alt="" />
                 </div>
                 <div data-aos="fade-left" data-aos-delay="400">
-                  <img src="./src/assets/clients/amazon.png" alt="" />
+                  <img loading="lazy" src={AmazonImg} alt="" />
                 </div>
               </div>
             </div>
           </section>
 
           {/* Services */}
-          <section className="relative">
+          <section id="services" className="relative">
             <div className="absolute w-[1047px] h-[619px] bg-[#F4F9FF] rounded-tl-[150px] -right-[5vw]"></div>
             <div className="flex  flex-col lg:flex-row items-center justify-between w-full pt-40">
               <div className="relative z-20">
@@ -145,7 +242,7 @@ function App() {
                   elaborate online business services.
                 </p>
                 <div className="absolute -bottom-28 z-10 -left-20">
-                  <img src={Dots} />
+                  <img loading="lazy" src={Dots} />
                 </div>
               </div>
               <div className="flex items-center justify-center w-full">
@@ -186,47 +283,50 @@ function App() {
           </section>
 
           <section className="pt-40">
-            <div className="flex  flex-col-reverse space-y-20 space-y-reverse lg-space-y-0 lg:flex-row w-full items-center">
-              <div className="w-full relative">
-                <div className="relative z-20">
-                  <iframe
-                    data-aos="fade-right"
-                    className="rounded-3xl shadow-xl w-full lg:w-4/5 h-[372px]"
-                    src="https://www.youtube.com/embed/lxvKgxw-P-4"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
-                </div>
-                <div className="h-24 w-24 bg-[#FFF5DB] rounded-full absolute right-28 -bottom-12 z-10"></div>
-              </div>
-              <div className="w-full relative">
-                <div>
-                  <div className="h-40 w-40 bg-[#EFF1FF] rounded-br-[150px] absolute -left-10 -top-10 z-10"></div>
-
+            <Element name="product">
+              <div className="flex  flex-col-reverse space-y-20 space-y-reverse lg-space-y-0 lg:flex-row w-full items-center">
+                <div className="w-full relative">
                   <div className="relative z-20">
-                    <div
-                      data-aos="fade-up"
-                      data-aos-delay="500"
-                      className="text-black text-4xl"
-                    >
-                      Great Digital Product <br /> Agency since 2016{" "}
+                    <iframe
+                      data-aos="fade-right"
+                      className="rounded-3xl shadow-xl w-full lg:w-4/5 h-[372px]"
+                      src="https://www.youtube.com/embed/lxvKgxw-P-4"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
+                  <div className="h-24 w-24 bg-[#FFF5DB] rounded-full absolute right-28 -bottom-12 z-10"></div>
+                </div>
+                <div className="w-full relative">
+                  <div>
+                    <div className="h-40 w-40 bg-[#EFF1FF] rounded-br-[150px] absolute -left-10 -top-10 z-10"></div>
+
+                    <div className="relative z-20">
+                      <div
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                        className="text-black text-4xl"
+                      >
+                        Great Digital Product <br /> Agency since 2016{" "}
+                      </div>
+                      <p
+                        data-aos="fade-up"
+                        data-aos-delay="1000"
+                        className="text-grey pt-5"
+                      >
+                        {" "}
+                        Our Business Plan is a written document describing a
+                        company's core business activites, Objectives, and how
+                        it plans to achieve its goals. Our goal is to provide
+                        our client high quality Product with modern idea
+                        accordingly their budgets and according thir
+                        reuirements.
+                      </p>
                     </div>
-                    <p
-                      data-aos="fade-up"
-                      data-aos-delay="1000"
-                      className="text-grey pt-5"
-                    >
-                      {" "}
-                      Our Business Plan is a written document describing a
-                      company's core business activites, Objectives, and how it
-                      plans to achieve its goals. Our goal is to provide our
-                      client high quality Product with modern idea accordingly
-                      their budgets and according thir reuirements.
-                    </p>
                   </div>
                 </div>
               </div>
-            </div>
+            </Element>
           </section>
 
           <section className="pt-40">
@@ -259,7 +359,8 @@ function App() {
                   >
                     <div className="relative">
                       <img
-                        src="./src/assets/avatar/9.png"
+                        loading="lazy"
+                        src={Avatar9}
                         className="rounded-br-full relative rounded-bl-full rounded-tl-full z-10"
                         alt=""
                       />
@@ -300,13 +401,14 @@ function App() {
                   <div className=" w-[600px] h-[415px]">
                     <div className="absolute left-[40%] ">
                       <div className="animate-neg-spin-slow">
-                        <img src="./src/assets/avatar/1.png" alt="" />
+                        <img loading="lazy" src={Avatar1} alt="" />
                       </div>
                     </div>
                     <div className="absolute top-[20%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/5.png"
+                          loading="lazy"
+                          src={Avatar5}
                           className="w-[98px] h-[98px]"
                           alt=""
                         />
@@ -315,7 +417,8 @@ function App() {
                     <div className="absolute top-[60%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/3.png"
+                          loading="lazy"
+                          src={Avatar3}
                           className="w-[68px] h-[68px]"
                           alt=""
                         />
@@ -324,7 +427,8 @@ function App() {
                     <div className="absolute bottom-0 left-[30%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/6.png"
+                          loading="lazy"
+                          src={Avatar6}
                           className="w-[98px] h-[98px]"
                           alt=""
                         />
@@ -333,7 +437,8 @@ function App() {
                     <div className="absolute bottom-[20%] right-[10%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/7.png"
+                          loading="lazy"
+                          src={Avatar7}
                           className="w-[68px] h-[68px]"
                           alt=""
                         />
@@ -342,7 +447,8 @@ function App() {
                     <div className="absolute top-[15%] right-[10%]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/4.png"
+                          loading="lazy"
+                          src={Avatar4}
                           className="w-[54px] h-[54px]"
                           alt=""
                         />
@@ -351,7 +457,8 @@ function App() {
                     <div className="absolute top-[40%] right-0">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/2.png"
+                          loading="lazy"
+                          src={Avatar2}
                           className="w-[54px] h-[54px]"
                           alt=""
                         />
@@ -360,7 +467,8 @@ function App() {
                     <div className="absolute top-[40%] right-0">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/2.png"
+                          loading="lazy"
+                          src={Avatar2}
                           className="w-[54px] h-[54px]"
                           alt=""
                         />
@@ -369,7 +477,8 @@ function App() {
                     <div className="absolute top-[50%] left-[50%] -mt-[50px] -ml-[50px]">
                       <div className="animate-neg-spin-slow">
                         <img
-                          src="./src/assets/avatar/8.png"
+                          loading="lazy"
+                          src={Avatar8}
                           className="w-[120px] h-[120px]"
                           alt=""
                         />
@@ -385,63 +494,65 @@ function App() {
           </section>
 
           <section className="pt-40">
-            <div className="relative h-[292px]">
-              <div className="border-0 rounded-3xl h-full  bg-[#F4F9FF] rounded-br-0 rounded-tr-0 lg:rounded-br-[100px] lg:rounded-tr-[100px]">
-                <div className="flex">
-                  <div className="w-full"></div>
-                  <div className="w-full">
-                    <div className="flex justify-end">
-                      <div className="h-[292px] rounded-br-[100px] rounded-tr-[100px] rounded-tl-[190px] rounded-bl-[240px] w-3/4 bg-blue-700 hidden md:block"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute z-10 top-0 h-full w-full">
-                <div className="flex flex-col lg:flex-row w-full items-center h-full justify-around">
-                  <div className="flex flex-col space-y-4">
-                    <div
-                      data-aos="fade-up"
-                      data-aos-delay="500"
-                      className="text-4xl font-extrabold"
-                    >
-                      Subscribe Newsletter
-                    </div>
-                    <div
-                      data-aos="fade-up"
-                      data-aos-delay="700"
-                      className="text-[#757575]"
-                    >
-                      I will update good news and promotion service not spam
-                    </div>
-                  </div>
-                  <div className="w-full lg:w-1/2">
-                    <div
-                      data-aos="fade-up"
-                      className="flex items-center space-x-2 p-3 w-full rounded-full justify-between bg-white h-full shadow-3xl"
-                    >
-                      <div className="w-full h-full pl-4">
-                        <input
-                          className="w-full h-full focus:outline-0"
-                          placeholder="Enter your email address..."
-                        />
-                      </div>
-                      <div>
-                        <BaseButton className="whitespace-nowrap">
-                          Contact Now
-                        </BaseButton>
+            <Element name="contact">
+              <div className="relative h-[292px]">
+                <div className="border-0 rounded-3xl h-full  bg-[#F4F9FF] rounded-br-0 rounded-tr-0 lg:rounded-br-[100px] lg:rounded-tr-[100px]">
+                  <div className="flex">
+                    <div className="w-full"></div>
+                    <div className="w-full">
+                      <div className="flex justify-end">
+                        <div className="h-[292px] rounded-br-[100px] rounded-tr-[100px] rounded-tl-[190px] rounded-bl-[240px] w-3/4 bg-blue-700 hidden lg:block"></div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="absolute z-10 top-0 h-full w-full">
+                  <div className="flex flex-col lg:flex-row w-full items-center h-full justify-around">
+                    <div className="flex flex-col space-y-4">
+                      <div
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                        className="text-4xl font-extrabold"
+                      >
+                        Subscribe Newsletter
+                      </div>
+                      <div
+                        data-aos="fade-up"
+                        data-aos-delay="700"
+                        className="text-[#757575]"
+                      >
+                        I will update good news and promotion service not spam
+                      </div>
+                    </div>
+                    <div className="w-full lg:w-1/2">
+                      <div
+                        data-aos="fade-up"
+                        className="flex items-center space-x-2 p-3 w-full rounded-full justify-between bg-white h-full shadow-3xl"
+                      >
+                        <div className="w-full h-full pl-4">
+                          <input
+                            className="w-full h-full focus:outline-0"
+                            placeholder="Enter your email address..."
+                          />
+                        </div>
+                        <div>
+                          <BaseButton className="whitespace-nowrap">
+                            Contact Now
+                          </BaseButton>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Element>
           </section>
           <section className="pt-40 pb-20">
             <div className="border-t border-b">
               <div className="pt-16 pb-16">
                 <div className="grid grid-cols-1 lg:grid-cols-6">
                   <div className="lg:col-span-2">
-                    <div className="pb-7">A+ Studio</div>
+                    <div className="pb-7 font-black">A+ Studio</div>
                     <div className="w-1/2">
                       Leading digital agency with solid design and development
                       expertise. We build readymade websites, mobile
@@ -449,7 +560,9 @@ function App() {
                     </div>
                   </div>
                   <div>
-                    <div className="font-extrabold pb-7 ">What We do</div>
+                    <div className="font-black pb-7 pt-10 md:pt-0">
+                      What We do
+                    </div>
                     <div>
                       <ul className="font-thin text-xs leading-8">
                         <li>Web Design</li>
@@ -460,35 +573,31 @@ function App() {
                     </div>
                   </div>
                   <div>
-                    <div className="font-extrabold pb-7 ">Company</div>
+                    <div className="font-black pb-7 pt-10 md:pt-0">Company</div>
                     <div>
                       <ul className="font-thin text-xs leading-8">
-                        <li>Web Design</li>
-                        <li>App Design</li>
-                        <li>Social Media Manage</li>
-                        <li>Market Analysis Project</li>
+                        <li>About Us</li>
+                        <li>Career</li>
+                        <li>Become Investor</li>
                       </ul>
                     </div>
                   </div>
                   <div>
-                    <div className="font-extrabold pb-7 ">Support</div>
+                    <div className="font-black pb-7 pt-10 md:pt-0">Support</div>
                     <div>
                       <ul className="font-thin text-xs leading-8">
-                        <li>Web Design</li>
-                        <li>App Design</li>
-                        <li>Social Media Manage</li>
-                        <li>Market Analysis Project</li>
+                        <li>FAQ</li>
+                        <li>Policy</li>
+                        <li>Business</li>
                       </ul>
                     </div>
                   </div>
                   <div>
-                    <div className="font-extrabold pb-7 ">Contact</div>
+                    <div className="font-black pb-7 pt-10 md:pt-0">Contact</div>
                     <div>
                       <ul className="font-thin text-xs leading-8">
-                        <li>Web Design</li>
-                        <li>App Design</li>
-                        <li>Social Media Manage</li>
-                        <li>Market Analysis Project</li>
+                        <li>WhatsApp</li>
+                        <li>Support 24</li>
                       </ul>
                     </div>
                   </div>
