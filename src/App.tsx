@@ -311,7 +311,7 @@ function App() {
                       </div>
                       <p
                         data-aos="fade-up"
-                        data-aos-delay="1000"
+                        data-aos-delay="700"
                         className="text-grey pt-5"
                       >
                         {" "}
