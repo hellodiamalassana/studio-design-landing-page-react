@@ -392,11 +392,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="w-[340px] relative"
-              >
+              <div className="w-[340px] relative">
                 <div className="animate-spin-slow relative z-20">
                   <div className=" w-[600px] h-[415px]">
                     <div className="absolute left-[40%] ">
