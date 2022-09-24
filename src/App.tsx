@@ -74,7 +74,7 @@ function App() {
                   duration={500}
                   onClick={() => scrollTo()}
                 >
-                  Home
+                  Accueil
                 </Link>
               </li>
               <li className="mr-10 cursor-pointer">
